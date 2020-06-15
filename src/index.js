@@ -11,7 +11,7 @@ import Create from './home/create';
 ReactDOM.render(
   <Router>
       <div>
-      {/* <Route path='/' component={App}/> */}
+      <Route path='/' component={App}/>
       <Route path='/app' component={App2}/>
         <Route path='/create' component={Create}/>
       </div>
