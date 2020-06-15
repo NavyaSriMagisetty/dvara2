@@ -76,9 +76,9 @@ class Home extends Component {
                 Conception Percentage
             </div>
               <div class="card-body text">
-                Pregnant Heifers 20%
+              <p style={{color:"black", lineHeight:"0px"}}>Pregnant Heifers 20%</p>
               <br />
-              Pregnant Cows 30%
+              <p style={{color:"black", lineHeight:"0px"}}>Pregnant Cows 30%</p>
             </div>
             </div>
             <div className="card smallblock">
