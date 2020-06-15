@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import './index.css';
 import App from './App';
-import App2 from './App2';
+import Main from './App2';
 import * as serviceWorker from './serviceWorker';
 import Create from './home/create';
 
@@ -12,8 +12,8 @@ ReactDOM.render(
   <Router>
       <div>
       <Route path='/' component={App}/>
-      <Route path='/app' component={App2}/>
         <Route path='/create' component={Create}/>
+        {/* <Route path='/home' component={Main}/> */}
       </div>
   </Router>,
   document.getElementById('root')

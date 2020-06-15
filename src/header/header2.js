@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import  './header.css'
 import logo from '../images/logo.png'
+import { Link } from 'react-router-dom';
 class Header2 extends Component {
 
   constructor(props) {
@@ -16,7 +17,7 @@ class Header2 extends Component {
               <br/>
               <nav className="navbar navbar-default container-fluid d-flex">
                     <ul >
-                        <li className="navDec"><a className="linkDec" href="#">Home</a></li>
+                        <li className="navDec"><Link to={`/home`} >Home</Link></li>
                         <li className="navDec"><a className="linkDec" href="#">Add Cattle Details</a></li>
                         <li className="navDec"><a className="linkDec" href="#">Add Milk Production Details</a></li>
                         <li className="navDec"><a className="linkDec" href="#">Add Veterinary Details</a></li>

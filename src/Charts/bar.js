@@ -29,6 +29,7 @@ class BarChart extends Component {
               datasets:[
                 {
                   data : value,
+                  backgroundColor:"lightgreen",
                 }
               ]
             }
@@ -63,16 +64,16 @@ class BarChart extends Component {
                   }
               }]
             },
-            plugins: {
-              datalabels: {
-                anchor: 'end',
-                align: 'top',
-                formatter: Math.round,
-                font: {
-                  weight: 'bold'
-                }
-              }
-            }
+            // plugins: {
+            //   datalabels: {
+            //     anchor: 'end',
+            //     align: 'top',
+            //     formatter: Math.round,
+            //     font: {
+            //       weight: 'bold'
+            //     }
+            //   }
+            // }
             }}
             
             data={this.state.chartData}
