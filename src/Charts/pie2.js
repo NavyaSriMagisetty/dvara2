@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import firebase from '../Firebase/firebase';
 import { Chart } from "react-google-charts";
-import {Pie} from 'react-chartjs-2';
 
 
 class PieChart2 extends Component {
@@ -55,8 +54,8 @@ class PieChart2 extends Component {
             data={this.state.chartData}
             /> */}
             <Chart
-            width={'500px'}
-            height={'300px'}
+            // width={'500px'}
+            // height={'300px'}
   chartType="PieChart"
   loader={<div>Loading Chart</div>}
   data={[

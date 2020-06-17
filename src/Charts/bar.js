@@ -15,14 +15,12 @@ class BarChart extends Component {
   getDetails = (querySnapshot) => {
     const head = [];
     const value = [];
-    this.ref.orderBy("day").get().then(snapshot =>{
+    this.ref.orderBy("day","desc").limit(5).get().then(snapshot =>{
         snapshot.forEach(doc =>{
             const data =doc.data()
             head.push(data.day)
             value.push(data.price)
         });
-        //   this.setState({head:head})
-        //   this.setState({value:value})
           this.setState({
             chartData:{
               labels: head,

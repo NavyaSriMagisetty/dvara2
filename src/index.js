@@ -1,21 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as HashRouter, Route } from 'react-router-dom';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import './index.css';
 import App from './App';
-import Main from './App2';
+import Header from './header/header';
 import * as serviceWorker from './serviceWorker';
 import Create from './home/create';
+import Home from './home/home'
 
 ReactDOM.render(
-  <Router>
+  <HashRouter>
       <div>
-      <Route path='/' component={App}/>
-        <Route path='/create' component={Create}/>
-        {/* <Route path='/home' component={Main}/> */}
+        <Header/>
       </div>
-  </Router>,
+      <div className="content">
+        <Route path='/create' component={Create}/>
+      <Route exact path='/' component={Home}/>
+      </div>
+  </HashRouter>,
   document.getElementById('root')
 );
 

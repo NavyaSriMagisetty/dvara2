@@ -16,7 +16,7 @@ class LineChart2 extends Component {
     const head = [];
     const fat = [];
     const snf = [];
-    this.ref.orderBy("day").get().then(snapshot =>{
+    this.ref.orderBy("day","desc").limit(5).get().then(snapshot =>{
         snapshot.forEach(doc =>{
             const data =doc.data()
             head.push(data.day)
@@ -67,7 +67,7 @@ class LineChart2 extends Component {
                scales: {
                 yAxes: [{
                     ticks: {
-                        display: false,
+                        // display: false,
                         stepSize: 2
                     }
                 }],

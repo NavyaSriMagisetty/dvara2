@@ -26,3 +26,15 @@
 .text{
     text-align: initial;
 }
+
+.heading{
+    font-family: Calibri; 
+    font-size: 25pt;         
+    font-style: normal; 
+    font-weight: bold; 
+    color:rgb(93, 214, 82);
+    text-align: center;
+}
+input{
+    text-align:center;
+ }
