@@ -8,7 +8,8 @@ class BarChart extends Component {
     super(props);
     this.ref = firebase.firestore().collection('analysis');
     this.state = {
-        chartData:{}
+        head:[],
+        price:[]
         
     };
   }
@@ -21,17 +22,19 @@ class BarChart extends Component {
             head.push(data.day)
             value.push(data.price)
         });
-          this.setState({
-            chartData:{
-              labels: head,
-              datasets:[
-                {
-                  data : value,
-                  backgroundColor:"lightgreen",
-                }
-              ]
-            }
-          }) 
+          this.setState({head:head})
+          this.setState({price:value})
+          // this.setState({
+          //   chartData:{
+          //     labels: head,
+          //     datasets:[
+          //       {
+          //         data : value,
+          //         backgroundColor:"lightgreen",
+          //       }
+          //     ]
+          //   }
+          // }) 
     });
 }
 
@@ -40,7 +43,11 @@ class BarChart extends Component {
   }
   
   render(){
-    console.log(this.state.chartData)
+    var values= [];
+    var length = this.state.head.length;
+    for(var i = length-1;i>=0;i--){
+        values.push(this.state.price[i]);
+    }
       return(
         <div>
             <Bar
@@ -74,7 +81,15 @@ class BarChart extends Component {
             // }
             }}
             
-            data={this.state.chartData}
+            data={{
+              labels: this.state.head.sort(),
+              datasets:[
+                {
+                  data : values,
+                  backgroundColor:"lightgreen",
+                }
+              ]
+            }}
             />
         </div>
       );

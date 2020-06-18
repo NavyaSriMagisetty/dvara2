@@ -8,7 +8,9 @@ class LineChart2 extends Component {
     super(props);
     this.ref = firebase.firestore().collection('analysis');
     this.state = {
-        chartData:{}
+        head:[],
+        snf:[],
+        fat:[]
         
     };
   }
@@ -23,27 +25,28 @@ class LineChart2 extends Component {
             fat.push(data.fat)
             snf.push(data.snf)
         });
-        //   this.setState({head:head})
-        //   this.setState({fat:fat})
-          this.setState({
-            chartData:{
-              labels: head,
-              datasets:[
-                {
-                  label : "FAT",
-                  data : fat,
-                  borderColor:"red",
-                  fill:false,
-                },
-                {
-                    label : "SNF",
-                    data : snf,
-                    borderColor:"blue",
-                  fill:false,
-                  }
-              ]
-            }
-          }) 
+          this.setState({head:head})
+          this.setState({fat:fat})
+          this.setState({snf:snf})
+          // this.setState({
+          //   chartData:{
+          //     labels: head,
+          //     datasets:[
+          //       {
+          //         label : "FAT",
+          //         data : fat,
+          //         borderColor:"red",
+          //         fill:false,
+          //       },
+          //       {
+          //           label : "SNF",
+          //           data : snf,
+          //           borderColor:"blue",
+          //         fill:false,
+          //         }
+          //     ]
+          //   }
+          // }) 
     });
 }
 
@@ -52,7 +55,13 @@ class LineChart2 extends Component {
   }
   
   render(){
-    console.log(this.state.chartData)
+    var snf= [];
+    var fat=[];
+    var length = this.state.head.length;
+    for(var i = length-1;i>=0;i--){
+        fat.push(this.state.fat[i]);
+        snf.push(this.state.snf[i])
+    }
       return(
         <div>
             <Line 
@@ -78,7 +87,23 @@ class LineChart2 extends Component {
               }]
             },
             }}
-            data={this.state.chartData}
+            data={{
+              labels: this.state.head.sort(),
+                  datasets:[
+                    {
+                      label : "FAT",
+                      data : fat,
+                      borderColor:"red",
+                      fill:false,
+                    },
+                    {
+                        label : "SNF",
+                        data : snf,
+                        borderColor:"blue",
+                      fill:false,
+                      }
+                  ]
+            }}
             />
         </div>
       );

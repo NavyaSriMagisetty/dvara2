@@ -10,8 +10,6 @@ class LineChart extends Component {
     this.state = {
         head:[],
         value:[],
-        chartData:{},
-        data:[]
         
     };
   }
@@ -26,19 +24,6 @@ class LineChart extends Component {
         });
           this.setState({head:head})
           this.setState({value:value})
-          this.setState({
-            chartData:{
-              labels: this.state.head,
-              datasets:[
-                {
-                  data : this.state.value,
-                  fill:false,
-                  borderColor:"green",
-                }
-              ]
-            }
-          })
-          console.log("data",this.state.data)
     });
 }
 
@@ -47,6 +32,11 @@ class LineChart extends Component {
  }
   
   render(){
+    var values= [];
+    var length = this.state.value.length;
+    for(var i = length-1;i>=0;i--){
+        values.push(this.state.value[i]);
+    }
       return(
         <div>
             <Line 
@@ -68,7 +58,15 @@ class LineChart extends Component {
                 display: false
              },
             }}
-            data={this.state.chartData}
+            data={{
+              labels: this.state.head.sort(),
+              datasets:[
+                {
+                  data : values,
+                  fill:false,
+                  borderColor:"green",
+                }
+              ]}}
             />
         </div>
       );
