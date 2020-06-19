@@ -49,7 +49,7 @@ class PieChart extends Component {
             options={{
                 responsive: true,
                 legend: {
-            position:'bottom'
+            display:false
          },
             }}
             data={this.state.chartData}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import  './header.css'
 import logo from '../images/logo.png'
-import header2 from './header2'
+
 class Header extends Component {
 
   constructor(props) {
@@ -11,7 +11,7 @@ class Header extends Component {
   }
   render(){
       return(
-          <div  className="padd">
+          <div  className="padd ">
             <br/>
                 <img className="logo" src={logo} alt="logo here" align="left"/>
               <h2 className="headtext">Dvara E-Dairy Farm Solution</h2>

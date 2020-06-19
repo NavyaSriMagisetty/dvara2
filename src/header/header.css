@@ -1,9 +1,18 @@
 .padd{
   padding: 25px;
+  
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 
 .logo{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
     border:0;
     text-decoration:none; 
     outline:none;
@@ -11,6 +20,7 @@
 }
 .headtext{
     text-align: center;
+    font-size: 4vw;
 }
 .navDec{
     display: inline-block;

@@ -2,9 +2,19 @@
     background-color: rgb(228, 220, 228);
     justify-content: center;
     text-align: center;
+    padding: 75px;
+}
+.card-header{
+    padding: 0px;
+}
+.card-deck .card {
+    flex: 1 0;
+    margin-right: 15px;
+    margin-left: 15px;
 }
 .titleColor{
     background-color: rgb(157, 211, 50);
+    font-size: 2.5vw;
 }
 .a1{
     alignSelf: 'flex-start',
@@ -38,3 +48,7 @@
 input{
     text-align:center;
  }
+ .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
